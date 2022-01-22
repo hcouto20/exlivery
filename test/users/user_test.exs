@@ -8,7 +8,7 @@ defmodule Exlivery.Users.UserTest do
   describe "build/5" do
     test "when all params are valid, returns the user" do
       response =
-        User.build("João Alves", "helder@banana.com", "12345678900", 38, "Rua das bananas, 749")
+        User.build("Rua das bananas, 749", "João Alves", "pedro@banana.com", "12345678900", 38)
 
       expected_response = {:ok, build(:user, name: "João Alves")}
 
@@ -17,7 +17,7 @@ defmodule Exlivery.Users.UserTest do
 
     test "when there are invalid params, returns an error" do
       response =
-        User.build("Junior", "helder@banana.com", "05566664610", 17, "Rua das bananas, 749")
+        User.build("Junior", "junior@banana.com", "05566664610", 17, "Rua das bananas, 749")
 
       expected_response = {:error, "Invalid parameters"}
 
